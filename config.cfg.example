@@ -1,0 +1,4 @@
+# Modify this file and save it as config.cfg
+
+[authorization]
+token = TOKEN_HERE 
