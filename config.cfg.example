@@ -1,4 +1,7 @@
 # Modify this file and save it as config.cfg
 
 [authorization]
-token = TOKEN_HERE 
+token = TOKEN_HERE (optional, remove this line if not used)
+
+[verification]
+phone = NUMBER HERE (eg. 5089999999 - no spaces, 10 digits )
