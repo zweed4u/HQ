@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import os
+import json
 import requests
 import configparser
 
@@ -42,4 +43,4 @@ c = configparser.ConfigParser()
 configFilePath = os.path.join(root_directory, 'config.cfg')
 c.read(configFilePath)
 
-print(HQ(c.get('authorization', 'token')).get_me())
+print(json.dumps(HQ(c.get('authorization', 'token')).get_me(), indent=4))
