@@ -65,6 +65,16 @@ class HQ:
         user_response = self.make_request('GET', 'users/me', headers=self.config_headers)
         return user_response
 
+    def get_leaderboard(self):
+        params = {'mode': '1'}
+        leaderboard_response = self.make_request('GET', 'users/leaderboard', params=params, headers=self.config_headers)
+        return leaderboard_response
+
+    def add_referral_code(self, referringUsername):
+        json_data = {'referringUsername': referringUsername}
+        referral_response = self.make_request('PATCH', 'users/me', headers=self.config_headers, json=json_data)
+        return referral_response
+
 
 root_directory = os.getcwd()
 c = configparser.ConfigParser()
@@ -76,4 +86,4 @@ try:
 except:
     bearer_token = None
 phone_number = str(c.get('verification', 'phone'))
-print(json.dumps(HQ(phone_number, bearer_token).get_me(), indent=4))
+print(json.dumps(HQ(phone_number, bearer_token).get_show_info(), indent=4))
