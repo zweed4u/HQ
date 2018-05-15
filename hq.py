@@ -41,7 +41,7 @@ class HQ:
             'Accept':           '*/*',
             'Accept-Language':  'en-us',
             'x-hq-client':      'iOS/1.3.5 b88',
-            'x-hq-test-key':    ''                                          
+            'x-hq-test-key':    ''
         }
         json_data = {
             'method': 'sms',
@@ -68,7 +68,7 @@ class HQ:
             'Accept':           '*/*',
             'Accept-Language':  'en-us',
             'x-hq-client':      'iOS/1.3.5 b88',
-            'x-hq-test-key':    ''                                          
+            'x-hq-test-key':    ''
         }
         json_data = {
             'username': desired_username
@@ -87,7 +87,7 @@ class HQ:
                 'Accept':           '*/*',
                 'Accept-Language':  'en-us',
                 'x-hq-client':      'iOS/1.3.5 b88',
-                'x-hq-test-key':    ''                                          
+                'x-hq-test-key':    ''
             }
             json_data = {
                 "country": "us",
@@ -165,7 +165,7 @@ class HQ:
             'Content-Type':     'application/json',
             'User-Agent':       'HQ-iOS/88 CFNetwork/808.2.16 Darwin/16.3.0',
             'Connection':       'keep-alive',
-            'x-hq-test-key':     ''                                                                          
+            'x-hq-test-key':     ''
         }
         json_data = {}
         return self.make_request('POST', f'friends/{user_id}/requests', json=json_data, headers=headers)
@@ -183,7 +183,7 @@ class HQ:
             'Content-Type':     'application/json',
             'User-Agent':       'HQ-iOS/88 CFNetwork/808.2.16 Darwin/16.3.0',
             'Connection':       'keep-alive',
-            'x-hq-test-key':     ''                                                                          
+            'x-hq-test-key':     ''
         }
         json_data = {}
         return self.make_request('POST', f'blocks/{user_id}', json=json_data, headers=headers)
