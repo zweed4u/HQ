@@ -188,6 +188,23 @@ class HQ:
         json_data = {}
         return self.make_request('POST', f'blocks/{user_id}', json=json_data, headers=headers)
 
+    def get_payout(self):
+        headers = {
+            'Host':             'api-quiz.hype.space',
+            'Accept-Encoding':  'gzip, deflate',
+            'User-Agent':       'HQ-iOS/88 CFNetwork/808.2.16 Darwin/16.3.0',
+            'Connection':       'keep-alive',
+            'x-hq-stk':         'MQ==',
+            'x-hq-device':      'iPhone6,1',
+            'Accept':           '*/*',
+            'Accept-Language':  'en-us',
+            'x-hq-client':      'iOS/1.3.5 b88',
+            'x-hq-test-key':    '',
+            'Authorization':    f'Bearer {self.bearer_token}'
+        }
+        return self.make_request('GET', 'users/me/payouts', headers=headers)
+
+
 root_directory = os.getcwd()
 c = configparser.ConfigParser()
 configFilePath = os.path.join(root_directory, 'config.cfg')
