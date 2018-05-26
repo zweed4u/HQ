@@ -14,13 +14,13 @@ class HQ:
         self.config_headers = {
             'Host':             'api-quiz.hype.space',
             'Accept-Encoding':  'gzip, deflate',
-            'User-Agent':       'HQ-iOS/88 CFNetwork/808.2.16 Darwin/16.3.0',
+            'User-Agent':       'HQ-iOS/89 CFNetwork/808.2.16 Darwin/16.3.0',
             'Connection':       'keep-alive',
             'x-hq-stk':         'MQ==',
             'x-hq-device':      'iPhone6,1',
             'Accept':           '*/*',
             'Accept-Language':  'en-us',
-            'x-hq-client':      'iOS/1.3.5 b88',
+            'x-hq-client':      'iOS/1.3.6 b89',
             'x-hq-test-key':    '',
             'Authorization':    f'Bearer {bearer_token}'
         }
@@ -35,12 +35,12 @@ class HQ:
             'Host':             'api-quiz.hype.space',
             'Content-Type':     'application/json',
             'Accept-Encoding':  'gzip, deflate',
-            'User-Agent':       'HQ-iOS/88 CFNetwork/808.2.16 Darwin/16.3.0',
+            'User-Agent':       'HQ-iOS/89 CFNetwork/808.2.16 Darwin/16.3.0',
             'Connection':       'keep-alive',
             'x-hq-device':      'iPhone6,1',
             'Accept':           '*/*',
             'Accept-Language':  'en-us',
-            'x-hq-client':      'iOS/1.3.5 b88',
+            'x-hq-client':      'iOS/1.3.6 b89',
             'x-hq-test-key':    ''
         }
         json_data = {
@@ -62,12 +62,12 @@ class HQ:
             'Host':             'api-quiz.hype.space',
             'Content-Type':     'application/json',
             'Accept-Encoding':  'gzip, deflate',
-            'User-Agent':       'HQ-iOS/88 CFNetwork/808.2.16 Darwin/16.3.0',
+            'User-Agent':       'HQ-iOS/89 CFNetwork/808.2.16 Darwin/16.3.0',
             'Connection':       'keep-alive',
             'x-hq-device':      'iPhone6,1',
             'Accept':           '*/*',
             'Accept-Language':  'en-us',
-            'x-hq-client':      'iOS/1.3.5 b88',
+            'x-hq-client':      'iOS/1.3.6 b89',
             'x-hq-test-key':    ''
         }
         json_data = {
@@ -81,12 +81,12 @@ class HQ:
                 'Host':             'api-quiz.hype.space',
                 'Content-Type':     'application/json',
                 'Accept-Encoding':  'gzip, deflate',
-                'User-Agent':       'HQ-iOS/88 CFNetwork/808.2.16 Darwin/16.3.0',
+                'User-Agent':       'HQ-iOS/89 CFNetwork/808.2.16 Darwin/16.3.0',
                 'Connection':       'keep-alive',
                 'x-hq-device':      'iPhone6,1',
                 'Accept':           '*/*',
                 'Accept-Language':  'en-us',
-                'x-hq-client':      'iOS/1.3.5 b88',
+                'x-hq-client':      'iOS/1.3.6 b89',
                 'x-hq-test-key':    ''
             }
             json_data = {
@@ -157,31 +157,49 @@ class HQ:
             'Host':             'api-quiz.hype.space',
             'x-hq-device':      'iPhone6,1',
             'Accept':           '*/*',
-            'x-hq-client':      'iOS/1.3.5 b88',
+            'x-hq-client':      'iOS/1.3.6 b89',
             'Authorization':    f'Bearer {self.bearer_token}',
             'Accept-Encoding':  'gzip, deflate',
             'x-hq-stk':         'MQ==',
             'Accept-Language':  'en-us',
             'Content-Type':     'application/json',
-            'User-Agent':       'HQ-iOS/88 CFNetwork/808.2.16 Darwin/16.3.0',
+            'User-Agent':       'HQ-iOS/89 CFNetwork/808.2.16 Darwin/16.3.0',
             'Connection':       'keep-alive',
             'x-hq-test-key':     ''
         }
         json_data = {}
         return self.make_request('POST', f'friends/{user_id}/requests', json=json_data, headers=headers)
 
-    def block_user(self, user_id):
+    def remove_friend_request(self, user_id):
         headers = {
             'Host':             'api-quiz.hype.space',
             'x-hq-device':      'iPhone6,1',
             'Accept':           '*/*',
-            'x-hq-client':      'iOS/1.3.5 b88',
+            'x-hq-client':      'iOS/1.3.6 b89',
             'Authorization':    f'Bearer {self.bearer_token}',
             'Accept-Encoding':  'gzip, deflate',
             'x-hq-stk':         'MQ==',
             'Accept-Language':  'en-us',
             'Content-Type':     'application/json',
-            'User-Agent':       'HQ-iOS/88 CFNetwork/808.2.16 Darwin/16.3.0',
+            'User-Agent':       'HQ-iOS/89 CFNetwork/808.2.16 Darwin/16.3.0',
+            'Connection':       'keep-alive',
+            'x-hq-test-key':     ''
+        }
+        return self.make_request('DELETE', f'friends/{user_id}/requests', headers=headers)
+
+
+    def block_user(self, user_id):
+        headers = {
+            'Host':             'api-quiz.hype.space',
+            'x-hq-device':      'iPhone6,1',
+            'Accept':           '*/*',
+            'x-hq-client':      'iOS/1.3.6 b89',
+            'Authorization':    f'Bearer {self.bearer_token}',
+            'Accept-Encoding':  'gzip, deflate',
+            'x-hq-stk':         'MQ==',
+            'Accept-Language':  'en-us',
+            'Content-Type':     'application/json',
+            'User-Agent':       'HQ-iOS/89 CFNetwork/808.2.16 Darwin/16.3.0',
             'Connection':       'keep-alive',
             'x-hq-test-key':     ''
         }
